@@ -1,0 +1,29 @@
+# Dados do cliente (nunca sobrescrever)
+#
+# Este arquivo tem DOIS papéis: é o `.gitignore` do diretório do cliente e é o
+# que o `git add -A` do `publicar.sh` obedece ao montar o repo público. Uma
+# linha a mais aqui não só esconde o arquivo do cliente — impede que ele seja
+# PUBLICADO. Foi o que aconteceu com o `cmdperfil.json`: versionado no privado,
+# copiado pelo publicar.sh, e descartado silenciosamente na hora do commit.
+dados/chave.dat
+dados/chave.txt
+dados/bot_config.json
+dados/DB/
+dados/org/json/credenciais.json
+# Figurinhas e áudios que o dono trocou pelo !personagem
+dados/personagem/
+# Mario: emulador de NES com o cartucho embutido. O catalogo de jogos e do dono,
+# nao do cliente — uma linha aqui e o que impede o `publicar.sh` de mandar o
+# cartucho junto. Ver tools/jogos/externos/mario/montar.py.
+dados/org/json/jogos/mario.json
+dados/DB/ESDEATH_AUTH.db*
+
+# Runtime
+.bot.pid
+logs/*.log
+.backups/
+/backups/
+
+# Temporários do bot (helpers::dir_tmp) e do atualizar.sh — fora do /tmp do sistema
+/tmp/
+/.atualizar.*/
